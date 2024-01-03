@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { configColors } from 'config/types';
+import { configColors } from 'config/styles';
 
 import { TIconBase } from './types';
 

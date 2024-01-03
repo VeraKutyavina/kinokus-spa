@@ -2,7 +2,9 @@ const theme = {
   colors: {
     black: '#1D1D1D',
     white: '#FFFFFF',
-    pink: '#EDB1C4',
+    primary: '#C4A3E3',
+    primaryDark: '#a27dbd',
+    transparent: 'transparent',
   },
 
   headerHeight: '6rem',

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled, { css } from 'styled-components';
-import { getMarginStyles } from 'config/types';
+import { getMarginStyles } from 'config/styles';
 
 import { TIcon, TIconBase } from './types';
 import { configIcons, IconKeys } from './config';

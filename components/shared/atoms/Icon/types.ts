@@ -1,4 +1,4 @@
-import { ColorKeys, TMargin } from 'config/types';
+import { ColorKeys, TMargin } from 'config/styles';
 
 import { IconKeys } from './config';
 
