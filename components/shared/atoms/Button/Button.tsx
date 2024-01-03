@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
+import { Loader } from 'components/shared/atoms/Loader';
 
 // import Link from 'next/link';
-// import { Loader } from 'src/shared/ui/atoms/Loader';
 import { Label, SpinnerWrapper, StyledButton } from './styled';
 import { TButton } from './types';
 import {
@@ -68,12 +68,11 @@ const Button = forwardRef<HTMLButtonElement, TButtonType>(
       </Label>
       {isLoading && (
         <SpinnerWrapper>
-          {/* <Loader */}
-          {/*  variant="simple" */}
-          {/*  size={sizeConfig[size].loaderSize} */}
-          {/*  color={colorConfig[variant]} */}
-          {/* /> */}
-          <div>wede</div>
+          <Loader
+            variant="simple"
+            size={sizeConfig[size].loaderSize}
+            color={colorConfig[variant]}
+          />
         </SpinnerWrapper>
       )}
     </StyledButton>
