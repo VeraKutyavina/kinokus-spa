@@ -115,22 +115,13 @@
               // store
               ["^store/"],
               // Constants
-              ["^public/", "^helpers"],
-              // SRC
-              [
-                "^src/shared/config",
-                "^src/shared/context",
-                "^src/shared/hooks",
-                "^src/shared/types",
-                "^src/shared/helpers",
-                "^pages/"
-              ],
+              ["^public/", "^helpers",  "^config"],
               // Shared components
               [
-                "^src/shared/ui/atoms/",
-                "^src/shared/ui/molecules/",
-                "^src/shared/ui/organisms/",
-                "^src/shared/ui/templates/",
+                "^components/shared/atoms/",
+                "^components/shared/molecules/",
+                "^components/shared/organisms/",
+                "^components/shared/templates/",
 
                 "^pages/"
               ],
