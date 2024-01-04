@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
+import Link from 'next/link';
 import { Loader } from 'components/shared/atoms/Loader';
 
-// import Link from 'next/link';
 import { Label, SpinnerWrapper, StyledButton } from './styled';
 import { TButton } from './types';
 import {
@@ -17,7 +17,6 @@ import {
 
 type TButtonType = TButton & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-// todo: fix link part after add next js
 const Button = forwardRef<HTMLButtonElement, TButtonType>(
   (
     {
@@ -33,7 +32,7 @@ const Button = forwardRef<HTMLButtonElement, TButtonType>(
       isDisabled = false,
       children,
       isLoading = false,
-      // href,
+      href,
       ...props
     },
     ref,
@@ -54,10 +53,9 @@ const Button = forwardRef<HTMLButtonElement, TButtonType>(
       $size={sizeConfig[size]}
       $iconType={iconType}
       $icon={iconConfig[iconType]}
-      // as={href ? Link : 'button'}
-      // as="button"
-      // href={href}
-      // passHref
+      as={href ? Link : 'button'}
+      href={href}
+      passHref
       {...props}
     >
       <Label isLoading={isLoading}>
