@@ -13,13 +13,7 @@ const GlobalStyle = createGlobalStyle`
 html,
 body {
   height: 100%;
-
-  font-size: var(--font-size);
   -webkit-tap-highlight-color: transparent;
-
-  #client-content {
-    filter: var(--colors-filter);
-  }
 }
 
 html {

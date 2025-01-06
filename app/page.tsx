@@ -1,8 +1,12 @@
+'use client';
+
 const TSComponent = () => {
   return (
     <div className="App">
       <br />
-      <a href="/WithoutTS">Hello world page!</a>
+      <a style={{ color: 'black' }} href="/WithoutTS">
+        Hello world page!
+      </a>
       <br />
       <br />
     </div>
