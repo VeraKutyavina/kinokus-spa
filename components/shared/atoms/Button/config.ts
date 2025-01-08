@@ -1,4 +1,4 @@
-import theme from 'public/styles/theme';
+import theme from 'components/contexts/ThemeContext/theme';
 
 import { TIconConfig, TShapeConfig, TSizeConfig, TVariantConfig } from './types';
 

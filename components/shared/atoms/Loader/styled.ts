@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
-import { getMarginStyles } from 'config/styles';
+import theme from 'components/contexts/ThemeContext/theme';
 
-import theme from 'public/styles/theme';
+import { getMarginStyles } from 'config/styles';
 
 import { TLoaderWrapper, TSpinner } from './types';
 

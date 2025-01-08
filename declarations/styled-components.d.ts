@@ -1,4 +1,4 @@
-import { TTheme } from 'public/styles/theme';
+import { TTheme } from 'components/contexts/ThemeContext/theme';
 
 import 'styled-components';
 

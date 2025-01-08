@@ -3,8 +3,6 @@
     "next/babel"
   ],
   "plugins": [
-    ["styled-components", { "ssr": true }],
-    ["module-resolver", {"root": ["./"]}],
-    "inline-react-svg"
+    ["styled-components", { "ssr": true }]
   ]
 }

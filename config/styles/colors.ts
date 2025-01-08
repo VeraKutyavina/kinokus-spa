@@ -1,6 +1,5 @@
+import theme from 'components/contexts/ThemeContext/theme';
 import { Property } from 'csstype';
-
-import theme from 'public/styles/theme';
 
 export type ColorKeys = keyof typeof theme.colors;
 
