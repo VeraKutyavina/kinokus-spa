@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, PropsWithChildren, useState } from 'react';
-import { ThemeContext } from 'components/contexts/ThemeContext/ThemeContext';
+import { ThemeContext } from 'components/contexts/ThemeContext';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export const ClientLogicLayout: FC<PropsWithChildren> = ({ children }) => {

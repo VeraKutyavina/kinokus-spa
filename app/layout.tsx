@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 
-import { ClientLogicLayout } from 'components/shared/organisms/ClientLogicLayout/ClientLogicLayout';
+import { ClientLogicLayout } from 'components/shared/organisms/ClientLogicLayout';
 
 export const metadata: Metadata = {
   title: 'Кинокусь',
