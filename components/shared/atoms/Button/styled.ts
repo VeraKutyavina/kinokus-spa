@@ -115,9 +115,9 @@ export const SpinnerWrapper = styled.div`
 `;
 
 export const Label = styled.span<TLabelProps>(
-  ({ isLoading }) => css`
+  ({ $isLoading }) => css`
     display: inline-flex;
 
-    opacity: ${isLoading ? 0 : 1};
+    opacity: ${$isLoading ? 0 : 1};
   `,
 );

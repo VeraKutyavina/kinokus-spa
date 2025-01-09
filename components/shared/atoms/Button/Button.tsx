@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import Link from 'next/link';
+
 import { Loader } from 'components/shared/atoms/Loader';
 
 import { Label, SpinnerWrapper, StyledButton } from './styled';
@@ -55,10 +56,9 @@ const Button = forwardRef<HTMLButtonElement, TButtonType>(
       $icon={iconConfig[iconType]}
       as={href ? Link : 'button'}
       href={href}
-      passHref
       {...props}
     >
-      <Label isLoading={isLoading}>
+      <Label $isLoading={isLoading}>
         {iconType === 'leading' && icon}
         {iconType === 'only' ? icon : label}
         {iconType === 'trailing' && icon}

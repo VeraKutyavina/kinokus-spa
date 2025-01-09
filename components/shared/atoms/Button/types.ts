@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
-import { ESize, TMargin, TWidth } from 'config/styles';
 import { UrlObject } from 'url';
+
+import { ESize, TMargin, TWidth } from 'config/styles';
 
 export enum EVariant {
   PRIMARY = 'primary',
@@ -88,5 +89,5 @@ export type TButtonProps = TMargin &
   };
 
 export type TLabelProps = {
-  isLoading: boolean;
+  $isLoading: boolean;
 };

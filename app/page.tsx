@@ -25,8 +25,8 @@ const TSComponent = () => {
       <Button label="Click to create!" onClick={onClick} />
       <br />
       <br />
-      {movies.map(movie => (
-        <div>
+      {movies.map((movie, index) => (
+        <div key={index}>
           - {movie.attributes.name}: {movie.attributes.description}
         </div>
       ))}
