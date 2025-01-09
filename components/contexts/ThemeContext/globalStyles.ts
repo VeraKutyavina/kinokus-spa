@@ -91,18 +91,18 @@ ol {
 
   thead {
     font-weight: 500;
-    color: ${({ theme }) => theme.colors.grey_700};
+    color: ${({ theme }) => theme.colors.black};
     text-align: left;
   }
 
   thead,
   tr {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.grey_300};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.black};
   }
 
   tr:not(thead > tr) {
     &:hover {
-      background-color: ${({ theme }) => theme.colors.grey_100};
+      background-color: ${({ theme }) => theme.colors.black};
     }
 
     &:last-child {

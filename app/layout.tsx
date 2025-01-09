@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
-import { ThemeContext } from 'components/shared/contexts/ThemeContext/ThemeContext';
+
+import { ClientLogicLayout } from 'components/shared/organisms/ClientLogicLayout';
 
 export const metadata: Metadata = {
   title: 'Кинокусь',
@@ -11,7 +12,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="ru">
       <body>
-        <ThemeContext>{children}</ThemeContext>;
+        <ClientLogicLayout>{children}</ClientLogicLayout>
       </body>
     </html>
   );

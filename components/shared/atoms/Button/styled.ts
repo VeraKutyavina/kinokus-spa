@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { getMarginStyles } from 'config/styles';
+import theme from 'components/contexts/ThemeContext/theme';
 
-import theme from 'public/styles/theme';
+import { getMarginStyles } from 'config/styles';
 
 import { TButtonProps, TLabelProps } from './types';
 
@@ -115,9 +115,9 @@ export const SpinnerWrapper = styled.div`
 `;
 
 export const Label = styled.span<TLabelProps>(
-  ({ isLoading }) => css`
+  ({ $isLoading }) => css`
     display: inline-flex;
 
-    opacity: ${isLoading ? 0 : 1};
+    opacity: ${$isLoading ? 0 : 1};
   `,
 );
