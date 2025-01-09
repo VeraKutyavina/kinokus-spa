@@ -1,4 +1,4 @@
-import { sendRequest } from '../../base';
+import { sendRequest } from 'connections/base';
 
 export const getMovies = async () => {
   const res = await sendRequest(`/api/v1/movies`);
