@@ -1,38 +1,17 @@
 'use client';
 
-import { createMovie, getMovies } from 'connections/api/v1/movies';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useCreateMovieMutation } from 'connections/mutations/movies';
+import { useGetMoviesQuery } from 'connections/queries/movies';
+
+import { Button } from 'components/shared/atoms/Button';
 
 const TSComponent = () => {
-  // Положить в кастомные хуки ()
-  // Хочется тоастер с ошибкой
+  const { movies } = useGetMoviesQuery();
 
-  const { data, isLoading, isSuccess } = useQuery({
-    queryFn: getMovies,
-    queryKey: ['movies', 'all'],
-    staleTime: 1000,
-    cacheTime: 1000,
-  });
-
-  console.log(data, isLoading, isSuccess);
-
-  const client = useQueryClient();
-
-  const { mutate: create } = useMutation({
-    mutationFn: createMovie,
-    // onSuccess: () => {
-    //   client.invalidateQueries({ queryKey: ['movies', 'all'] });
-    // },
-    onSuccess: newMovie => {
-      // client.setQueryData(['movies', 'all'], [client.getQueriesData(['movies', 'all']), newMovie]);
-      client.setQueryData<any>(['movies', 'all'], (oldMovies: any) => [...oldMovies, newMovie]);
-      // На всякий случай чтобы точно не было запроса к беку
-      client.invalidateQueries({ queryKey: ['movies', 'all'], refetchType: 'none' });
-    },
-  });
+  const { createMovie } = useCreateMovieMutation();
 
   const onClick = () => {
-    create({ name: 'wed', description: 'weddw' });
+    createMovie({ name: 'Новый фильм', description: 'Хороший новый фильм' });
   };
 
   return (
@@ -43,6 +22,14 @@ const TSComponent = () => {
       </a>
       <br />
       <br />
+      <Button label="Click to create!" onClick={onClick} />
+      <br />
+      <br />
+      {movies.map(movie => (
+        <div>
+          - {movie.attributes.name}: {movie.attributes.description}
+        </div>
+      ))}
     </div>
   );
 };

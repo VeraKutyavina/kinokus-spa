@@ -12,7 +12,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="ru">
       <body>
-        <ClientLogicLayout>{children}</ClientLogicLayout>;
+        <ClientLogicLayout>{children}</ClientLogicLayout>
       </body>
     </html>
   );
