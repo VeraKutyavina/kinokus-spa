@@ -3,7 +3,7 @@ import { sendRequest } from 'connections/base';
 export const getMovies = async () => {
   const res = await sendRequest(`/api/v1/movies`);
 
-  return res.data;
+  return res;
 };
 
 export const createMovie = async ({ name, description }: { name: string; description: string }) => {
@@ -13,5 +13,5 @@ export const createMovie = async ({ name, description }: { name: string; descrip
     headers: { 'content-type': 'application/json' },
   });
 
-  return res.data;
+  return res;
 };
