@@ -3,9 +3,9 @@ export type TMovie = {
     name: string;
     description?: string;
     annotation?: string;
-    duration_in_minutes?: string;
-    poster_url?: string;
-    release_date?: string;
+    durationInMinutes?: string;
+    posterUrl?: string;
+    releaseDate?: string;
   };
   id: number;
   type: 'movie';

@@ -7,6 +7,15 @@ export default () => {
   const plugins = [];
 
   return plugins.reduce((acc, next) => next(acc), {
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'http',
+          hostname: 'localhost',
+          port: '3033',
+        },
+      ],
+    },
     compiler: {
       styledComponents: true,
     },
