@@ -12,9 +12,7 @@ type MovieCardProps = {
 };
 
 export const MovieCard: FC<MovieCardProps> = ({ movie }) => {
-  const {
-    attributes: { posterUrl, name },
-  } = movie;
+  const { posterUrl, name } = movie;
 
   return (
     <MovieContainer>

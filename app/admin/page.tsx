@@ -18,9 +18,6 @@ const TSComponent = () => {
   return (
     <MainTemplate>
       <br />
-      <a style={{ color: 'black' }} href="/WithoutTS">
-        Hello world page!]
-      </a>
       <br />
       <br />
       <Button label="Click to create!" onClick={onClick} />

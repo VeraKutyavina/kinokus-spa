@@ -21,15 +21,15 @@ export const Title = styled.h4`
 export const StyledLink = styled(Link)`
   display: inline-block;
 
-  overflow: hidden; /* Скрыть часть изображения, если оно увеличивается */
+  overflow: hidden;
 
-  border-radius: 8px; /* По желанию: добавляет скругленные углы */
+  border-radius: 8px;
 
   img {
-    transition: transform 0.3s ease-in-out; /* Плавный переход при увеличении */
+    transition: transform 0.3s ease-in-out;
   }
 
   &:hover img {
-    transform: scale(1.1); /* Увеличение изображения */
+    transform: scale(1.1);
   }
 `;
