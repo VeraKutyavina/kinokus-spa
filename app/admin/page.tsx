@@ -13,7 +13,7 @@ const TSComponent = () => {
   return (
     <MainTemplate>
       <CreateFilmForm />
-      <MoviesList moviesList={movies} />
+      <MoviesList isAdmin moviesList={movies} />
     </MainTemplate>
   );
 };

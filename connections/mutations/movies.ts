@@ -1,4 +1,4 @@
-import { createMovie } from 'connections/api/v1/movies';
+import { createMovie, deleteMovie } from 'connections/api/v1/movies';
 import { TMovie } from 'types/movie';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -28,4 +28,17 @@ export const useCreateMovieMutation = ({ onSuccess }: TUseCreateMovieMutation) =
   });
 
   return { createMovie: mutate, variables };
+};
+
+export const useDeleteMovieMutation = () => {
+  const client = useQueryClient();
+
+  const { mutate, variables } = useMutation({
+    mutationFn: deleteMovie,
+    onSuccess: () => {
+      client.invalidateQueries({ queryKey: ['movies', 'all'] });
+    },
+  });
+
+  return { deleteMovie: mutate, variables };
 };

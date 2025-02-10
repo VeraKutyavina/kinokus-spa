@@ -23,3 +23,16 @@ export const createMovie = async ({ name, description }: CreateMovie) => {
 
   return res;
 };
+
+type DeleteMovie = {
+  id: number;
+};
+
+export const deleteMovie = async ({ id }: DeleteMovie) => {
+  const res = await sendRequest(`/api/v1/movies/${id}`, {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+  });
+
+  return res;
+};
