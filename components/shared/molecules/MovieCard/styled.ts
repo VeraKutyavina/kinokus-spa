@@ -2,6 +2,8 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 export const MovieContainer = styled.div`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
@@ -32,4 +34,10 @@ export const StyledLink = styled(Link)`
   &:hover img {
     transform: scale(1.1);
   }
+`;
+
+export const ButtonWrapper = styled.div`
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
 `;

@@ -6,7 +6,15 @@ export const getMovies = async () => {
   return res;
 };
 
-export const createMovie = async ({ name, description }: { name: string; description: string }) => {
+type CreateMovie = {
+  name: string;
+  description: string;
+  annotation: string;
+  durationInMinutes: number;
+  releaseDate: string;
+};
+
+export const createMovie = async ({ name, description }: CreateMovie) => {
   const res = await sendRequest(`/api/v1/movies`, {
     method: 'POST',
     body: JSON.stringify({ name, description }),

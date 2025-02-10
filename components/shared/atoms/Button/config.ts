@@ -76,7 +76,7 @@ export const shadowConfig: TVariantConfig = {
 
 export const borderRadiusConfig: TShapeConfig = {
   none: '0',
-  rounded: '0.625rem',
+  rounded: '0.875rem',
   'extra-rounded': '1.5rem',
   circle: '50%',
 };
