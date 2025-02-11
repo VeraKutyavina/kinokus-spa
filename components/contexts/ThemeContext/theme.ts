@@ -1,9 +1,9 @@
 const theme = {
   colors: {
-    black: '#1D1D1D',
+    black: '#1a1a1a',
     white: '#FFFFFF',
-    primary: '#C4A3E3',
-    primaryDark: '#a27dbd',
+    primary: '#c10923',
+    primaryDark: '#9c081e',
     transparent: 'transparent',
   },
 

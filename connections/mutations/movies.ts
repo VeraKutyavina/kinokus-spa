@@ -1,11 +1,15 @@
-import { createMovie } from 'connections/api/v1/movies';
+import { createMovie, deleteMovie } from 'connections/api/v1/movies';
 import { TMovie } from 'types/movie';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-export const useCreateMovieMutation = () => {
+type TUseCreateMovieMutation = {
+  onSuccess?: (movie: TMovie) => void;
+};
+
+export const useCreateMovieMutation = ({ onSuccess }: TUseCreateMovieMutation) => {
   const client = useQueryClient();
 
-  const { mutate } = useMutation({
+  const { mutate, variables } = useMutation({
     mutationFn: createMovie,
     // onSuccess: () => {
     //   client.invalidateQueries({ queryKey: ['movies', 'all'] });
@@ -18,8 +22,23 @@ export const useCreateMovieMutation = () => {
       ]);
       // На всякий случай чтобы точно не было запроса к беку
       client.invalidateQueries({ queryKey: ['movies', 'all'], refetchType: 'none' });
+
+      onSuccess?.(newMovie);
     },
   });
 
-  return { createMovie: mutate };
+  return { createMovie: mutate, variables };
+};
+
+export const useDeleteMovieMutation = () => {
+  const client = useQueryClient();
+
+  const { mutate, variables } = useMutation({
+    mutationFn: deleteMovie,
+    onSuccess: () => {
+      client.invalidateQueries({ queryKey: ['movies', 'all'] });
+    },
+  });
+
+  return { deleteMovie: mutate, variables };
 };

@@ -1,18 +1,23 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import { useDeleteMovieMutation } from 'connections/mutations/movies';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import { TMovie } from 'types/movie';
 
 import { Image } from 'components/shared/atoms/Image';
 import { Skeleton } from 'components/shared/atoms/Skeleton';
 
-import { MovieContainer, StyledLink, Title } from './styled';
+import { IconButton, MovieContainer, Overlay, StyledLink, Title } from './styled';
 
 type MovieCardProps = {
   movie: TMovie;
+  isAdmin?: boolean;
 };
 
-export const MovieCard: FC<MovieCardProps> = ({ movie }) => {
-  const { posterUrl, name } = movie;
+export const MovieCard: FC<MovieCardProps> = ({ movie, isAdmin = false }) => {
+  const { posterUrl, name, id } = movie;
+
+  const { deleteMovie } = useDeleteMovieMutation();
 
   return (
     <MovieContainer>
@@ -29,8 +34,18 @@ export const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           <Skeleton width="162px" height="263px" />
         )}
       </StyledLink>
+      {isAdmin && (
+        <Overlay className="overlay">
+          <IconButton>
+            <FaEdit />
+          </IconButton>
+          <IconButton onClick={() => deleteMovie({ id })}>
+            <FaTrash />
+          </IconButton>
+        </Overlay>
+      )}
       <Link href="/">
-        <Title> {name} </Title>
+        <Title>{name}</Title>
       </Link>
     </MovieContainer>
   );
